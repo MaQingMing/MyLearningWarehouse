@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="chapter04-r2dbc" />
+        <module name="chapter03-webflux" />
+        <module name="chapter02-reactor" />
+        <module name="chapter01-stream" />
+        <module name="chapter05-security" />
+      </profile>
+    </annotationProcessing>
+  </component>
+</project>
