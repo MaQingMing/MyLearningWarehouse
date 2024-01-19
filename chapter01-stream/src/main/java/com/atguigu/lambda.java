@@ -80,5 +80,6 @@ public class lambda {
          *  2。  @FunctiionInterface     注解帮我们检查是否是函数式接口  如果是的话可以用Lambda简化
          */
 
+
     }
 }
