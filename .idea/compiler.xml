@@ -13,5 +13,13 @@
         <module name="chapter05-security" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="chapter01-stream" target="16" />
+      <module name="chapter02-reactor" target="16" />
+      <module name="chapter03-webflux" target="16" />
+      <module name="chapter04-r2dbc" target="16" />
+      <module name="chapter05-security" target="16" />
+      <module name="MyLearningWarehouse" target="16" />
+    </bytecodeTargetLevel>
   </component>
 </project>

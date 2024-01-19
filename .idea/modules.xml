@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/MyLearningWarehouse.iml" filepath="$PROJECT_DIR$/.idea/MyLearningWarehouse.iml" />
+      <module fileurl="file://$PROJECT_DIR$/chapter01-stream/chapter01-stream.iml" filepath="$PROJECT_DIR$/chapter01-stream/chapter01-stream.iml" />
+      <module fileurl="file://$PROJECT_DIR$/chapter02-reactor/chapter02-reactor.iml" filepath="$PROJECT_DIR$/chapter02-reactor/chapter02-reactor.iml" />
+      <module fileurl="file://$PROJECT_DIR$/chapter03-webflux/chapter03-webflux.iml" filepath="$PROJECT_DIR$/chapter03-webflux/chapter03-webflux.iml" />
+      <module fileurl="file://$PROJECT_DIR$/chapter04-r2dbc/chapter04-r2dbc.iml" filepath="$PROJECT_DIR$/chapter04-r2dbc/chapter04-r2dbc.iml" />
+      <module fileurl="file://$PROJECT_DIR$/chapter05-security/chapter05-security.iml" filepath="$PROJECT_DIR$/chapter05-security/chapter05-security.iml" />
+    </modules>
+  </component>
+</project>
