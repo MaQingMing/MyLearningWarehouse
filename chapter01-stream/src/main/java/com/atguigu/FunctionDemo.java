@@ -9,7 +9,6 @@ import java.util.function.*;
  */
 public class FunctionDemo {
 
-
     public static void main(String[] args) {
         //生产者
         Supplier<String> stringSupplier = ()->"42";

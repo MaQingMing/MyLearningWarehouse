@@ -7,7 +7,7 @@ package com.atguigu;
  */
 
 
-public class LambdaTest02 {
+public class LambdaDemo02 {
 
     public static void main(String[] args) {
 

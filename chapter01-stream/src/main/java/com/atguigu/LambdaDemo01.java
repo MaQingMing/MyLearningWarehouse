@@ -8,7 +8,7 @@ import java.util.Collections;
  * @version 1.0
  * @date 2024/1/17 23:24
  */
-public class LambdaTest01 {
+public class LambdaDemo01 {
 
 
     public static void main(String[] args) {
