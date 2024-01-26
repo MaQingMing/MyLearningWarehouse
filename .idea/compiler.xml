@@ -2,6 +2,7 @@
 <project version="4">
   <component name="CompilerConfiguration">
     <annotationProcessing>
+      <profile default="true" name="Default" enabled="true" />
       <profile name="Maven default annotation processors profile" enabled="true">
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
@@ -14,7 +15,7 @@
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="chapter01-stream" target="8" />
+      <module name="chapter01-stream" target="11" />
       <module name="chapter02-reactor" target="8" />
       <module name="chapter03-webflux" target="8" />
       <module name="chapter04-r2dbc" target="8" />

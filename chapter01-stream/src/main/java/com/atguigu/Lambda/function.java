@@ -1,4 +1,4 @@
-package com.atguigu;
+package com.atguigu.Lambda;
 
 import java.util.UUID;
 import java.util.function.BiConsumer;

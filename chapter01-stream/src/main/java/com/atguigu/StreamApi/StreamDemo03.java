@@ -62,12 +62,21 @@ public class StreamDemo03 {
         /**
          * groupingBy的使用
          */
+
+        /**
+         * 数据是自流动的，而不是靠迭代被动流动
+         * 推拉模型
+         * 推: 流模式 上游有数据，自动推给下游
+         * 拉: 迭代器；自己遍历，自己拉取
+         */
         Map<String, List<Person>> collect = list.stream()
                 .filter(person -> person.age > 23)
                 .collect(Collectors.groupingBy(ele -> ele.sex));
 
 
         System.out.println("collect = " + collect);
+
+
 
 
     }
