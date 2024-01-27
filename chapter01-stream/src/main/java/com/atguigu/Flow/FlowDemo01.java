@@ -15,6 +15,10 @@ import java.util.concurrent.SubmissionPublisher;
  * 2.编码： 流式编程+链式调用+声明式API
  * 3.效果： 优雅全异步+消息实时处理+高吞土量+占用少量资源
  */
+
+/**
+ * 上传github
+ */
 public class FlowDemo01 {
 
    static class MyProcesser extends SubmissionPublisher<String> implements Flow.Processor<String,String>{
