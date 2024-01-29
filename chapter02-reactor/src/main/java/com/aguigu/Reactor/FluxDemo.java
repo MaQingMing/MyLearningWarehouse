@@ -15,6 +15,16 @@ import java.time.Duration;
 public class FluxDemo {
 
     public static void main(String[] args) {
+        Flux<Integer> range = Flux.range(1, 7);
+//        range.subscribe();          //流被订阅；默认订阅
+//        range.subscribe(v-> System.out.println("v = " + v));             //指定订阅规则，正常消费者，只消费正常元素
+//
+//        range.subscribe(v-> System.out.println("v = " + v),    //流元素消费
+//                throwable -> System.out.println("throwable = " + throwable),    //感知异常结束
+//                ()-> System.out.println("流结束了"));    //感知正常结束
+
+
+
 
     }
 
