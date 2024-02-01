@@ -1,5 +1,8 @@
 package com.aguigu.Reactor;
 
+import org.reactivestreams.Subscription;
+import reactor.core.Disposable;
+import reactor.core.publisher.BaseSubscriber;
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 import reactor.core.publisher.SignalType;
@@ -25,9 +28,114 @@ public class FluxDemo {
 
 
 
+        range.subscribe(new BaseSubscriber<Integer>() {
+
+            //订阅关系绑定的时候触发
+            @Override
+            protected void hookOnSubscribe(Subscription subscription) {
+                System.out.println("绑定了 = " + subscription);
+                requestUnbounded();       //要无限个数据
+                request(1);            //要一个数据
+            }
+
+            //数据到达时处理
+            @Override
+            protected void hookOnNext(Integer value) {
+                System.out.println("数据到达= " + value);
+                request(1);
+            }
+
+            @Override
+            protected void hookOnComplete() {
+                super.hookOnComplete();
+            }
+
+            @Override
+            protected void hookOnError(Throwable throwable) {
+                super.hookOnError(throwable);
+            }
+
+            @Override
+            protected void hookOnCancel() {
+                super.hookOnCancel();
+            }
+
+            @Override
+            protected void hookFinally(SignalType type) {
+                super.hookFinally(type);
+            }
+        });
 
     }
 
+    /**
+     * 限流
+     */
+    public void limit(){
+
+        Flux.range(1,1000)
+                .log()
+                //限流触发,看上游是怎么获取数据的
+                .limitRate(100) //一次性抓取100个元素，第一次 request(100) ，以后request(75)
+                .subscribe();
+        //75% 抓取策略 ： limitRate(100)
+        //第一次抓取100个数据，如果75%的元素已经处理了。继续抓取新的75%元素
+    }
+
+    public void dispose(){
+        Flux<Integer> flux = Flux.range(1, 1000)
+                .delayElements(Duration.ofSeconds(1))
+                .map(i -> 7)
+                .log();
+
+
+        //消费者是实现了Disposable 可取消
+        Disposable subscribe = flux.subscribe(System.out::println);
+    }
+
+    /**
+     * 自定义处理规则
+     */
+    public void handle(){
+        Flux.range(1,10)
+                .handle((value,sink)->{
+                    System.out.println("value = " + value);
+                    sink.next(value);
+                })
+        .log().subscribe();
+
+    }
+
+    /**
+     * 编程方式创建序列
+     * sink : 接收器 水槽 通道
+     * Source ;数据源  sink: 接收端
+     */
+    public void generate(){
+        Flux<Object> generate = Flux.generate(() -> 0,       //初始state的值
+                (state, sink) -> {
+                    if (state <= 10) {
+                        sink.next(state);     //把元素传出去
+                    } else {
+                        sink.complete();    //完成 ，完成信号
+                    }
+                    if (state == 7) {
+                        sink.error(new RuntimeException("我不喜欢7"));
+                    }
+                    return state + 1; //返回新的迭代state值
+                }
+        );
+
+    }
+
+    /**
+     * 缓冲区
+     */
+    public void buffer(){
+        Flux.range(1,100)
+                .buffer(30)           //一个缓存区里面有30个【1-30】 【31-60】
+                .subscribe();
+    }
     /**
      * Mono<Integer> 只有一个Integer
      * Flux<Integer> 多个Integer
