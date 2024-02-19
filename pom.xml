@@ -27,8 +27,5 @@
             <artifactId>lombok</artifactId>
             <version>1.18.28</version>
         </dependency>
-
     </dependencies>
-
-
 </project>
