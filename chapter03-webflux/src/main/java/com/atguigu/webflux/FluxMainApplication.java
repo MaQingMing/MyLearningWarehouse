@@ -22,7 +22,6 @@ public class FluxMainApplication {
 
         //快速编写一个能处理的服务器
 
-
         //1.创建一个能处理Http请求的处理器，参数:请求、响应； 返回值: Mono<Void> 代表处理完成的信号
         HttpHandler httpHandler = (serverHttpRequest,serverHttpResponse)->{
             URI uri = serverHttpRequest.getURI();
